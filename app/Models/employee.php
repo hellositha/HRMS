@@ -21,6 +21,7 @@ class employee extends Model
         'birth_date',
         'date_hired',
         'vaccine',
+        'designation_id',
 ];
 
 public function country()
@@ -41,10 +42,10 @@ public function department()
 {
     return $this->belongsTo(department::class);
 }
-//public function vaccine()
-//{
- //   return $this->belongsTo(vaccine::class);
-//}
+public function designation()
+{
+    return $this->belongsTo(designation::class);
+}
 
 
 

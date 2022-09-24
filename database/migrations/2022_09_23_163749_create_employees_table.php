@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('state_id');
             $table->foreignId('city_id');
             $table->foreignId('department_id');
+            $table->foreignId('designation_id');
             $table->string('vaccine');
             $table->string('first_name');
             $table->string('last_name');

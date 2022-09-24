@@ -35,6 +35,7 @@ class EmployeeResource extends Resource
                   //      Forms\Components\TextInput::make('vaccine_id')->datalist(['covid-19 dose 1','covid-19 dose 2','covid-19 dose 3','covid-19 dose 4','covid-19 dose 5']),
                         Forms\Components\TextInput::make('first_name'),
                         Forms\Components\TextInput::make('last_name'),
+                        Select::make('designation_id')->relationship('designation', 'name'),
                         Forms\Components\TextInput::make('address'),
                         Forms\Components\TextInput::make('zip_code'),
                         Forms\Components\DatePicker::make('birth_date'),

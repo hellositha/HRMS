@@ -27,10 +27,12 @@ class EmployeeResource extends Resource
             ->schema([
                     Card::make()->columns(2)->schema([
                         Select::make('country_id')->relationship('country', 'name')->required(),
-                Select::make('state_id')->relationship('state', 'name'),
+                        Select::make('state_id')->relationship('state', 'name'),
                         Select::make('city_id')->relationship('city', 'name'),
                         Select::make('department_id')->relationship('department', 'name'),
-                        Select::make('vaccine_id')->relationship('vaccine', 'vaccine'),
+                        Forms\Components\TextInput::make('vaccine')->datalist(['covid-19 dose 1','covid-19 dose 2','covid-19 dose 3','covid-19 dose 4','covid-19 dose 5']),
+                    //    Select::make('vaccine_id')->relationship('vaccine', 'vaccine'),
+                  //      Forms\Components\TextInput::make('vaccine_id')->datalist(['covid-19 dose 1','covid-19 dose 2','covid-19 dose 3','covid-19 dose 4','covid-19 dose 5']),
                         Forms\Components\TextInput::make('first_name'),
                         Forms\Components\TextInput::make('last_name'),
                         Forms\Components\TextInput::make('address'),
@@ -57,7 +59,7 @@ class EmployeeResource extends Resource
                     Tables\Columns\TextColumn::make('country.name')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
                     Tables\Columns\TextColumn::make('state.name')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
                     Tables\Columns\TextColumn::make('city.name')->sortable()->searchable()->toggleable(isToggledHiddenByDefault: true),
-                    Tables\Columns\TextColumn::make('vaccine.name')->sortable()->searchable()->toggleable(),
+                    Tables\Columns\TextColumn::make('vaccine')->sortable()->searchable()->toggleable(),
 
 
                 ])

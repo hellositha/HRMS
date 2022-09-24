@@ -24,7 +24,7 @@ class VaccineResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('employee_id')->relationship('Employee', 'first_name'),
+                Select::make('employee_id')->relationship('Employee', 'first_name')->nullable(),
                 Forms\Components\TextInput::make('vaccine')->datalist(['covid-19 dose 1','covid-19 dose 2','covid-19 dose 3','covid-19 dose 4','covid-19 dose 5']),
                 //Forms\Components\TextInput::make('vaccine')->required(),
                 Forms\Components\TextInput::make('product_name')->required(),

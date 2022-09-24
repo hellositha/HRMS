@@ -20,7 +20,7 @@ class employee extends Model
         'zip_code',
         'birth_date',
         'date_hired',
-        'vaccine_id',
+        'vaccine',
 ];
 
 public function country()
@@ -41,10 +41,10 @@ public function department()
 {
     return $this->belongsTo(department::class);
 }
-public function vaccine()
-{
-    return $this->belongsTo(vaccine::class);
-}
+//public function vaccine()
+//{
+ //   return $this->belongsTo(vaccine::class);
+//}
 
 
 

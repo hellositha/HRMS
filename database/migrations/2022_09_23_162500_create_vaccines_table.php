@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('vaccines', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
-           // $table->string('vaccine');
+            $table->foreignId('employee_id');
+            $table->string('vaccine');
             $table->string('product_name');
             $table->date('date');
             $table->string('healthcare_professional');
